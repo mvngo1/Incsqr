@@ -2,7 +2,7 @@ let modInfo = {
 	name: "Incremental^2",
 	id: "incrementalsquared",
 	author: "Mvngo",
-	pointsName: "points",
+	pointsName: "Score",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
@@ -41,8 +41,8 @@ function canGenPoints(){
 function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
-
 	let gain = new Decimal(1)
+	if (hasUpgrade('p', 11)) gain=gain.times(2)
 	return gain
 }
 
